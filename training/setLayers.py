@@ -429,7 +429,7 @@ def calcAndWriteStat(sub_dir, layername, kernel, stride, outCH, args):
 def getBash():
     return ('#!/usr/bin/env sh\n\
 %s/build/tools/caffe train --solver=pose_solver.prototxt --gpu=$1 \
---weights=/home/robbie/data/model/alexnet/bvlc_alexnet.caffemodel \
+--weights=/home/robbie/caffe_rtpose/model/coco/pose_iter_440000.caffemodel \
 2>&1 | tee ./output.txt' % caffe_path)
 
 if __name__ == "__main__":
@@ -445,7 +445,7 @@ if __name__ == "__main__":
 
     # Two branch: weight = 1, scale 0.5~1.1, fix the mode, base_lr = 4e-5, batch_size = 10
     if(exp == 1):
-        directory = 'experiment1' # output
+        directory = '2stage' # output
         serverFolder = '/home/robbie/data/Pose_Estimation_Kinematics/training/' + directory
         base_folder = '/home/robbie/data/Pose_Estimation_Kinematics/training/' + directory + 'model'
         dataFolder = '/home/robbie/data/rmppe/training/lmdb'
@@ -461,7 +461,7 @@ if __name__ == "__main__":
         nCP = 3
         if not os.path.exists(directory):
             os.makedirs(directory)
-        stage = 4 #was initially 6
+        stage = 2 #was initially 6
 
         for nc in range(0,1):
             layername = ['V','V','P'] * 2  +  ['V'] * 4 + ['P']  +  ['V'] * 2 + ['C'] * 2     + ['$'] + ['C2'] * 3 + ['C2'] * 2    + ['L2'] # first-stage

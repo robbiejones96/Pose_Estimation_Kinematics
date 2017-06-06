@@ -26,8 +26,8 @@ bbox_ratio = 0.25
 ## don't edit this part
 
 [[1]]
-caffemodel = '/home/robbie/data/rmppe/training/experiment2model/pose_iter_600000.caffemodel'
-deployFile = '/home/robbie/data/rmppe/training/experiment2/pose_deploy.prototxt'
+caffemodel = '/home/robbie/caffe_rtpose/model/coco/pose_iter_440000.caffemodel'
+deployFile = '/home/robbie/data/Pose_Estimation_Kinematics/training/5stage/pose_deploy.prototxt'
 description = '5 stage network'
 boxsize = 368
 padValue = 128

@@ -26,7 +26,7 @@ bbox_ratio = 0.25
 ## don't edit this part
 
 [[1]]
-caffemodel = '/home/robbie/data/rmppe/training/experiment3model/pose_iter_25.caffemodel'
+caffemodel = '/home/robbie/caffe_rtpose/model/coco/pose_iter_440000.caffemodel'
 deployFile = '/home/robbie/data/rmppe/training/experiment3/pose_deploy.prototxt'
 description = '4 stage network'
 boxsize = 368

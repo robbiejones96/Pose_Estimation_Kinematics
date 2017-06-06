@@ -30,12 +30,12 @@ caffe.set_device(0)
 true_heatmap_avg = [None] * num_test
 true_paf_avg = [None] * num_test
 
-for i in xrange(num_models): #0 is original model
+for i in xrange(1): #0 is original model
     #we take the Euclidean distance between the average heatmap/paf computed by the smaller network vs the original as the loss
     heatmap_loss = 0
     paf_loss = 0
     times = np.empty((num_test, 4))
-    param, model = config_reader(i)
+    param, model = config_reader(4)
     net = caffe.Net(model['deployFile'], model['caffemodel'], caffe.TEST)
     for j in xrange(num_test):
         oriImg = test_images[j]

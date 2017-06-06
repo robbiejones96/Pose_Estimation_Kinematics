@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+/home/robbie/caffe_train/build/tools/caffe train --solver=pose_solver.prototxt --gpu=$1 --weights=/home/robbie/caffe_rtpose/model/coco/pose_iter_440000.caffemodel 2>&1 | tee ./output.txt
